@@ -1,0 +1,21 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v3
+
+      - name: Node.js をセットアップ
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: 依存関係をインストール
+        run: npm install
+
+      - name: アプリケーションをビルド
+        run: npm run build
