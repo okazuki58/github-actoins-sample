@@ -19,3 +19,6 @@ jobs:
 
       - name: アプリケーションをビルド
         run: npm run build
+
+      - name: テストを実行
+        run: npm test
